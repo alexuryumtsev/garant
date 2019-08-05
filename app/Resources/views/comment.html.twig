@@ -1,0 +1,199 @@
+<!doctype html>
+<html class="no-js" lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Pixal - Creative Multipurpose Template</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Favicon -->
+    <link rel="shortcut icon" type="image/x-icon" href="{{ asset("img/favicon.png") }}">
+    <!-- All CSS Files -->
+    <!-- Bootstrap css -->
+    <link rel="stylesheet" href="{{ asset('css/default.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}">
+    <!-- Icon Font -->
+    <link rel="stylesheet" href="{{ asset('css/font-awesome.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/ionicons.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/et-line.css') }}">
+    <!-- Plugins css file -->
+    <link rel="stylesheet" href="{{ asset('css/plugins.css') }}">
+    <!-- Theme main style -->
+    <link rel="stylesheet" href="{{asset('css/style.css') }}">
+    <!-- Responsive css -->
+    <link rel="stylesheet" href="{{ asset('css/responsive.css') }}">
+    <!-- Modernizr JS -->
+    <script src="{{ asset('js/vendor/modernizr-2.8.3.min.js') }}"></script>
+</head>
+
+<body>
+
+<!--Corporate 1 Header Section-->
+<div class="header-section section">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12">
+                <!--Logo-->
+                <div class="float-left">
+                    <a class="header-logo"><img src="img/logo/footer-logo-dark.png" alt=""></a>
+                </div>
+                <!--Menu-->
+                <div class="float-right">
+                    {% block nav %}
+                        <nav class="main-menu multi-page-menu text-black">
+                            <ul>
+                                <!--<li class="active"><a href="index.html.twig">Главная</a>
+                                    <ul class="sub-menu">
+                                        <li class="active"><a href="index.html.twig">Скупка</a></li>
+                                        <li><a href="rules.html.twig">Продажа</a></li>
+                                        <li><a href="corporate-3.html">Правила</a></li>
+                                    </ul>
+                                </li>-->
+                                <li><a href="/#main">Главная</a></li>
+                                <li><a href="/#skupka">Скупка</a></li>
+                                <li><a href="/rules">Правила</a></li>
+                                <li><a href="/#about_us">О нас</a></li>
+                                <li><a href="/#contact">Контакты</a></li>
+
+                                {% if is_granted('ROLE_ADMIN') %}
+                                    <li><a href="/admin">Админ панель</a></li>
+                                    <li><a href="/logout">Выйти</a></li>
+                                {% else %}
+                                    <li><a href="/login">Войти</a></li>
+                                {% endif %}
+                            </ul>
+                        </nav>
+                    {% endblock %}
+                    <!--<a href="#" class="btn btn-border-gradient  btn-hover-gradient">buy now</a>-->
+                </div>
+                <!--Mobile Menu-->
+                <div class="mobile-menu multi-page text-black"></div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--Corporate About Section 1-->
+<div class="co-about-section-1 section pt-140 pb-100">
+    <a name="about_us" style="display:block;margin-bottom:70px; margin-top:-50px"></a>
+    <div class="container">
+
+        <div class="row">
+            <!--About Image-->
+            <div class="col-md-6 col-xs-12 float-right mb-40">
+
+                <div class="co-about-image-1">
+                    <img src="img/corporate/about/comment.png" alt="" style="margin-top: -38px;">
+                </div>
+
+            </div>
+            <!--About Content-->
+            <div class="col-md-6 col-xs-12 mb-40">
+                <div style="margin-top: 2%">
+                    {% for msg in app.session.flashBag.get('success') %}
+                        <div class="alert alert-info" role="alert">
+                            {{ msg }}
+                        </div>
+                    {% endfor %}
+                </div>
+                <div class="co-about-content-1">
+                    <form role="form" method="POST">
+                        <div class="form-group">
+                            <input name="name" type="text"  class="form-control" placeholder="Имя"/>
+                            <p class="help-block">Введите имя на русском языке</p>
+                        </div>
+                        <div class="form-group">
+                            <textarea name="comment" class="form-control" placeholder="Сообщение"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <input type="submit" name="submit" class="btn btn-info" value="Отправить" />
+                        </div>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<div class="co-mission-section-1 section pt-140 pb-140">
+    <img src="img/corporate/about/mission.png" alt="">
+    <div id="map" style="width: 100%; height: 600px"></div>
+</div>
+<!--Corporate Footer Section 1-->
+<div class="co-footer-section-1 section bg-dark-light pt-120 pb-80">
+
+    <div class="container">
+        <div class="row">
+
+            <div class="col-md-4 col-sm-6 col-xs-12 mb-40" style="width: 50%">
+                <div class="co-footer-widget-1">
+                    <img src="img/logo/footer-logo-light.png" alt="">
+                    <p>Наши cпециалисты найдут индивидуальный подход к каждому клиенту и помогут Вам совершить любые операции с драгметаллами, будь то покупка золота (платины) либо продажа серебряных украшений и мерных слитков.</p>
+                </div>
+            </div>
+
+            <div class="col-md-4 col-sm-6 col-xs-12 mb-40" style="width: 50%">
+                <div class="co-footer-widget-1 widget-contact">
+                    <h4 class="title">Наши контакты</h4>
+                    <ul>
+                        <li><span>Адрес :</span> г. Новосибирск. Красный проспект ,157</li>
+                        <li><span>Email :</span> <a href="#">ostrovsokrov@bk.ru</a></li>
+                        <li><span>Телефон :</span> <a href="#">+7(923)154-05-00</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<div class="co-footer-bottom-1 section bg-dark">
+    <div class="container">
+        <div class="row">
+
+            <div class="col-xs-12">
+                <div class="co-copyright-1 text-center">
+                    <p>Copyright &copy; 2019 </a>. All Rights Reserved.</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+
+
+<!-- Placed JS at the end of the document so the pages load faster -->
+
+<!-- jQuery latest version -->
+<script src="{{ asset('js/vendor/jquery-3.1.1.min.js') }}"></script>
+<!-- Bootstrap js -->
+<script src="{{ asset('js/bootstrap.min.js') }}"></script>
+<!-- Plugins js -->
+<script src="{{ asset('js/plugins.js') }}"></script>
+<!-- Ajax Mail js -->
+<script src="{{ asset('js/ajax-mail.js') }}"></script>
+<!-- Main js -->
+<script src="{{ asset('js/main.js') }}"></script>
+<script src="{{ asset('https://maps.api.2gis.ru/2.0/loader.js?pkg=full') }}"></script>
+
+<script type="text/javascript">
+    var map;
+
+    DG.then(function () {
+        map = DG.map('map', {
+            center: [55.058088, 82.912456],
+            zoom: 18,
+            scrollWheelZoom: false
+        });
+        DG.marker([55.058088, 82.912456]).addTo(map).bindPopup('Остров сокровищ');
+    });
+</script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,563 @@
+<!doctype html>
+<html class="no-js" lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Pixal - Creative Multipurpose Template</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Favicon -->
+    <link rel="shortcut icon" type="image/x-icon" href="{{ asset("img/favicon.png") }}">
+    <!-- All CSS Files -->
+    <!-- Bootstrap css -->
+    <link rel="stylesheet" href="{{ asset('css/default.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}">
+    <!-- Icon Font -->
+    <link rel="stylesheet" href="{{ asset('css/font-awesome.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/ionicons.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/et-line.css') }}">
+    <!-- Plugins css file -->
+    <link rel="stylesheet" href="{{ asset('css/plugins.css') }}">
+    <!-- Theme main style -->
+    <link rel="stylesheet" href="{{asset('css/style.css') }}">
+    <!-- Responsive css -->
+    <link rel="stylesheet" href="{{ asset('css/responsive.css') }}">
+    <!-- Modernizr JS -->
+    <script src="{{ asset('js/vendor/modernizr-2.8.3.min.js') }}"></script>
+</head>
+
+<body>
+
+<!--Corporate 1 Header Section-->
+<div class="header-section section">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12">
+                <!--Logo-->
+                <div class="float-left">
+                    <a class="header-logo"><img src="img/logo/footer-logo-dark.png" alt=""></a>
+                </div>
+                <!--Menu-->
+                <div class="float-right">
+                    {% block nav %}
+                    <nav class="main-menu multi-page-menu text-black">
+                        <ul>
+                            <!--<li class="active"><a href="index.html.twig">Главная</a>
+                                <ul class="sub-menu">
+                                    <li class="active"><a href="index.html.twig">Скупка</a></li>
+                                    <li><a href="rules.html.twig">Продажа</a></li>
+                                    <li><a href="corporate-3.html">Правила</a></li>
+                                </ul>
+                            </li>-->
+                            <li><a href="#main">Главная</a></li>
+                            <li><a href="#skupka">Скупка</a></li>
+                            <li><a href="#table_price">Таблица цен</a></li>
+                            <li><a href="/rules">Правила</a></li>
+                            <li><a href="#about_us">О нас</a></li>
+                            <li><a href="#contact">Контакты</a></li>
+
+                            {% if is_granted('ROLE_ADMIN') %}
+                            <li><a href="/admin">Админ панель</a></li>
+                            <li><a href="/logout">Выйти</a></li>
+                            {% else %}
+                            <li><a href="/login">Войти</a></li>
+                            {% endif %}
+                        </ul>
+                    </nav>
+                    {% endblock %}
+                    <!--<a href="#" class="btn btn-border-gradient  btn-hover-gradient">buy now</a>-->
+                </div>
+                <!--Mobile Menu-->
+                <div class="mobile-menu multi-page text-black"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--Corporate Hero Section 1-->
+<div class="co-hero-section-1 section">
+    <a name="main" style="display:block;margin-bottom:200px; margin-top:-270px"></a>
+    <!--Creative 1 Hero Slider-->
+    <div class="co-hero-slider-1 hero-slider">
+        <!--Hero Slide Item-->
+        <div class="co-hero-slide-item-1" style="background-image: url('img/corporate/hero/11.jpg'); margin-top: 193px; background-size: contain;">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-12 text-center">
+                        <!--Hero Slide Content-->
+                        <div class="co-hero-slide-content-1">
+                            <h4>Моментальный расчет на месте</h4>
+                            <h2 style="color: #ffffff;">Моментальный расчет на месте, возможность выезда нашего специалиста бесплатно, если количество золота будет составлять более 30 гр.</h2>
+                            <a href="#skupka" class="btn btn-white btn-lg btn-hover-gradient" style="margin-bottom: -100px;">Подробнее</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--Hero Slide Item-->
+        <div class="co-hero-slide-item-1" style="background-image: url('img/corporate/hero/2.jpg'); margin-top: 193px;">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-12 text-center">
+                        <!--Hero Slide Content-->
+                        <div class="co-hero-slide-content-1">
+                            <h4>Мы осуществялем:</h4>
+                            <h1>Скупку монет по индивидуальным ценам</h1>
+                            <a href="#skupka" class="btn btn-white btn-lg btn-hover-gradient" style="margin-bottom: -100px;">Подробнее</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="co-hero-slide-item-1" style="background-image: url('img/corporate/hero/3.jpg'); margin-top: 193px;">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-12 text-center">
+                        <!--Hero Slide Content-->
+                        <div class="co-hero-slide-content-1">
+                            <h4>Мы производим</h4>
+                            <h1>Скупку серебра по официальному курсу</h1>
+                            <a href="#skupka" class="btn btn-white btn-lg btn-hover-gradient" style="margin-bottom: -100px;">Подробнее</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="co-hero-slide-item-1" style="background-image: url('img/corporate/hero/6.jpg'); margin-top: 193px;">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-12 text-center">
+                        <!--Hero Slide Content-->
+                        <div class="co-hero-slide-content-1">
+                            <h2 style="color: #FFFFFF">Антиквариат</h2>
+                            <h2 style="color: #FFFFFF">Также у нас осуществляется скупка антиквариата.</h2>
+                            <a href="#skupka" class="btn btn-white btn-lg btn-hover-gradient" style="margin-bottom: -100px;">Подробнее</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="co-hero-slide-item-1" style="background-image: url('img/corporate/hero/5.jpg'); margin-top: 193px;">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-12 text-center">
+                        <!--Hero Slide Content-->
+                        <div class="co-hero-slide-content-1">
+                            <h2 style="color: #FFFFFF">Пенсионерам и Ветеранам ВОВ:</h2>
+                            <h2 style="color: #FFFFFF">При предоставлении документов, повышеная цена на супку.</h2>
+                            <a href="#skupka" class="btn btn-white btn-lg btn-hover-gradient" style="margin-bottom: -100px;">Подробнее</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--Corporate Service Section 1-->
+<div class="co-service-section-1 section">
+    <!--Service Wrapper-->
+    <div class="co-service-wrapper-1">
+        <!--Single Service-->
+        <div class="co-single-service-1 col-md-4 text-center">
+            <i class="icon-tools"></i>
+            <h3>ОЦЕНКА НА МЕСТЕ</h3>
+            <p>Моментальная оценка вашего золота на месте. Наши специалисты готовы с вами встретится и оценить стоимость с расчетом на месте.</p>
+        </div>
+        <!--Single Service-->
+        <div class="co-single-service-1 col-md-4 text-center">
+            <i class="icon-bargraph"></i>
+            <h3>САМЫЕ ЛУЧШИЕ ЦЕНЫ</h3>
+            <p>Наша компания создана для вас и ваших потребностей, поэтому каждый клиент получит индивидуальный подход и высокое качество обслуживания.</p>
+        </div>
+        <!--Single Service-->
+        <div class="co-single-service-1 col-md-4 text-center">
+            <i class="icon-wallet"></i>
+            <h3>МОМЕНТАЛЬНЫЙ РАСЧЕТ</h3>
+            <p>Не хотите ждать денег за золото? тогда наша компания создана для ваших потребностей. Мы производим моментальный расчет с клиентами на месте.</p>
+        </div>
+    </div>
+</div>
+
+
+<!--Corporate Pricing Section 1-->
+<div class="co-pricing-section-1 section pt-140 pb-140">
+    <a name="skupka" style="display:block;margin-bottom:200px; margin-top:-270px"></a>
+    <div class="container">
+        <div class="row">
+            
+            <!--Section Title-->
+            <div class="col-md-4 col-xs-12">
+                <div class="co-section-title-1 title-left">
+                    <h2>Индивидуальные цены для оптовиков</h2>
+{#                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur sit amet est lorem ishhh  ullamcorper, consequat urna id, facilis.</p>#}
+                </div>
+            </div>
+            
+            <div class="col-md-8 col-xs-12">
+                <!--Single Pricing-->
+                <div class="co-single-pricing-1">
+                    <h1 class="co-pricing-price-1"><span>₽</span>1520 руб./гр.</h1>
+                    <h4 class="co-pricing-package-name-1">За наличный расчет</h4>
+{#                    <ul class="co-pricing-options-1">#}
+{#                        <li>100 email forwards</li>#}
+{#                        <li>250 MB storage</li>#}
+{#                    </ul>#}
+{#                    <a href="#" class="btn btn-lg btn-hover-gradient co-pricing-btn-1">Purchase</a>#}
+                </div>
+                
+                <!--Single Pricing-->
+                <div class="co-single-pricing-1 active">
+                    <h1 class="co-pricing-price-1"><span>₽</span>1555 руб./гр.</h1>
+                    <h4 class="co-pricing-package-name-1">За безналичный расчет</h4>
+{#                    <ul class="co-pricing-options-1">#}
+{#                        <li>250 MB storage</li>#}
+{#                        <li>100 Email Forwards</li>#}
+{#                        <li>200 MySQL Datebase</li>#}
+{#                        <li>50 social account</li>#}
+{#                    </ul>#}
+{#                    <a href="#" class="btn btn-lg btn-hover-gradient btn-gradient co-pricing-btn-1">Purchase</a>#}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--
+--------------------------------------------------------------------
+-->
+
+<div class="co-about-section-1 section pt-140 pb-100">
+    <a name="table_price" style="display:block; margin-bottom:50px; margin-top:35px"></a>
+    <h2 style="text-align: center; margin-bottom: 35px">Таблица цен</h2>
+    <div class="container">
+
+        <div class="row">
+            <table class="table table-bordered">
+                <thead>
+                <tr>
+                    <th>ПРОБА</th>
+                    <th>ДО 50Г.</th>
+                    <th>ОТ 50 до 500</th>
+                    <th>БОЛЕЕ 500Г.</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>375/9К</td>
+                    <td>{{ proba375 }}</td>
+                    <td>{{ proba375_2 }}</td>
+                    <td>Договорная цена</td>
+                </tr>
+                <tr>
+                    <td>500/12К</td>
+                    <td>{{ proba500 }}</td>
+                    <td>{{ proba500_2 }}</td>
+                    <td>Договорная цена</td>
+                    {#<td>{{ proba500 }}</td>#}
+                </tr>
+                <tr>
+                    <td>583/585/14К</td>
+                    <td>{{ proba585 }}</td>
+                    <td>{{ proba585_2 }}</td>
+                    <td>Договорная цена</td>
+                </tr>
+                <tr>
+                    <td>750/18К</td>
+                    <td>{{ proba750 }}</td>
+                    <td>{{ proba750_2 }}</td>
+                    <td>Договорная цена</td>
+                    {#<td>{{ proba750 }}</td>#}
+                </tr>
+                <tr>
+                    <td>850/стоматология</td>
+                    <td>{{ proba850 }}</td>
+                    <td>{{ proba850_2 }}</td>
+                    <td>Договорная цена</td>
+                    {#<td>{{ proba850 }}</td>#}
+                </tr>
+                <tr>
+                    <td>900</td>
+                    <td>{{ proba900 }}</td>
+                    <td>{{ proba900_2 }}</td>
+                    <td>Договорная цена</td>
+                    {#<td>{{ proba900 }}</td>#}
+                </tr>
+                <tr>
+                    <td>916/22К</td>
+                    <td>{{ proba916 }}</td>
+                    <td>{{ proba916_2 }}</td>
+                    <td>Договорная цена</td>
+                    {#<td>{{ proba916 }}</td>#}
+                </tr>
+                <tr>
+                    <td>958/23К</td>
+                    <td>{{ proba958 }}</td>
+                    <td>{{ proba958_2 }}</td>
+                    <td>Договорная цена</td>
+                    {#<td>{{ proba958 }}</td>#}
+                </tr>
+                <tr>
+                    <td>999/24К</td>
+                    <td>{{ proba999 }}</td>
+                    <td>{{ proba999_2 }}</td>
+                    <td>Договорная цена</td>
+                    {#<td>{{ proba999 }}</td>#}
+                </tr>
+                <tr>
+                    <td>Платина 950</td>
+                    <td>Договорная цена</td>
+                    <td>Договорная цена</td>
+                    <td>Договорная цена</td>
+                </tr>
+                <tr>
+                    <td>Серебро 925(875)</td>
+                    <td>Договорная цена</td>
+                    <td>Договорная цена</td>
+                    <td>Договорная цена</td>
+                </tr>
+                <tr>
+                    <td>Паладий 900(500)</td>
+                    <td>Договорная цена</td>
+                    <td>Договорная цена</td>
+                    <td>Договорная цена</td>
+                </tr>
+
+                <tr>
+                    <td>Монеты и Банковские слитки (Серебро, Золото, Платина, Паладий)</td>
+                    <td>Договорная цена</td>
+                    <td>Договорная цена</td>
+                    <td>Договорная цена</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+</div>
+
+<!--
+--------------------------------------------------------------------
+-->
+
+
+
+<!--Corporate About Section 1-->
+<div class="co-about-section-1 section pt-140 pb-100">
+    <a name="about_us" style="display:block;margin-bottom:70px; margin-top:-50px"></a>
+    <div class="container">
+        
+        <div class="row">
+            <!--About Image-->
+            <div class="col-md-6 col-xs-12 float-right mb-40">
+                
+                <div class="co-about-image-1">
+                    <img src="img/corporate/about/about-us.png" alt="">
+                </div>
+                
+            </div>
+            <!--About Content-->
+            <div class="col-md-6 col-xs-12 mb-40">
+                
+                <div class="co-about-content-1">
+                    <h1>О нас</h1>
+                    <p>Компания "" занимает лидирующие позиции на рынке драгоценных металлов в Сибирском регионе и предлагает наилучшие цены!</p>
+                    <p>Наши специалисты квалифицированно оценят и проверят состав металла.</p>
+                    </p>Наши клиенты ценят в нас оперативность ,индивидуальный подход и конфиденциальность сделок.</p>
+                    </p>Компания ""  зарекомендовала себя , как надёжный партнёр , с которым сотрудничают ломбарды , скупки , ювелирные мастерские , а так же  частные лица во многих регионах Российской Федерации.</p>
+
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</div>
+
+<!--Corporate Testimonial Section 1-->
+<div class="co-testimonial-section-1 section pt-140 pb-140" style="background-image: url(img/corporate/bg/1.jpg);">
+
+    <div class="container">
+        
+        <div class="row">
+            
+            <div class="col-md-8 col-md-offset-2 col-xs-12">
+                <h1 style="color:#FFFFFF; text-align: center; margin-bottom: 42px;">Отзывы</h1>
+                <!--Testimonial Slider-->
+                <div class="co-testimonial-slider-1 text-center">
+                    <!--Single Testimonial-->
+                    {% for comments in comment %}
+                    <div class="co-single-testimonial-1">
+                        <h3>{{ comments.name }}</h3>
+                        <p>{{ comments.comment }}</p>
+                        <img src="img/corporate/icon/quote-right.png" alt="">
+                    </div>
+
+                    {% endfor %}
+                    <!--Single Testimonial-->
+{#                    <div class="co-single-testimonial-1">#}
+{#                        <h3>John China Do</h3>#}
+{#                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum facilisis nibh id nulla venenatis porta. In tempus quam dui. Suspendisse potenti. Aliquam erat volutpat. Fusce eleifend vulputate consequat. Maecenas in elementum dui, facilisis consequat erat. Suspendisse </p>#}
+{#                        <img src="img/corporate/icon/quote-right.png" alt="">#}
+{#                    </div>#}
+                </div>
+                <a href="/comments" class="btn btn-white" style="margin: auto; position: absolute; left: 0; bottom: -70px; right: 0;">Добавить отзыв</a>
+                
+            </div>
+            
+        </div>
+        
+    </div>
+</div>
+
+<!--Corporate Mission Section 1-->
+<div class="co-mission-section-1 section pt-140 pb-140">
+
+    <img src="img/corporate/about/mission.png" alt="">
+    <div class="container">
+        <div class="row">
+            <div class="co-mission-wrapper-1 col-md-7 col-md-offset-5 col-xs-12">
+               
+                <!--Creative 1 Tab List-->
+                <ul class="co-tab-list-1 tab-three">
+                    <li class="active"><a href="#what-we-do" data-toggle="tab">Что мы делаем: </a></li>
+                    <li><a href="#our-mission" data-toggle="tab">Скупка</a></li>
+                    <li><a href="#our-vission" data-toggle="tab">Контакты</a></li>
+                </ul>
+               
+                <!--Creative 1 Tab Content-->
+                <div class="co-tab-content-1 tab-content">
+                    <div role="tabpanel" class="co-tab-pane-1 tab-pane fade in active" id="what-we-do">
+                        <p>Осуществляем скупку и продажу драгметаллов (в виде слитков, монет, лома, ювелирных изделий) во всех регионах РФ. Мы всегда рады сотрудничать с физическими и юридическими лицами, готовы обсудить индивидуальные условия работы и предоставить наилучшие цены для постоянных клиентов.</p>
+                    </div>
+                    <div role="tabpanel" class="co-tab-pane-1 tab-pane fade" id="our-mission">
+                        <p>Мы осуществляем скупку драг. металлов, монет и антиквариата.</p>
+                    </div>
+                    <div role="tabpanel" class="co-tab-pane-1 tab-pane fade" id="our-vission">
+{#                        <p> г. Новосибирск. Красный проспект ,157</p>#}
+{#                        <p>ostrovsokrov@bk.ru</p>#}
+{#                        <p>+7(923)154-05-00</p>#}
+                        <li><span>Адрес :</span> г. Новосибирск. Красный проспект ,157</li>
+                        <li><span>Email :</span> <a href="#">ostrovsokrov@bk.ru</a></li>
+                        <li><span>Телефон :</span> <a href="#">+7(923)154-05-00</a></li>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+</div>
+
+{#<!--Corporate CTA Section 1-->#}
+{#<div class="co-cta-section-1 section bg-gradient pt-100 pb-100">#}
+{#    <a name="contact" style="display:block;margin-bottom:200px; margin-top:-270px"></a>#}
+{#    <div class="container">#}
+{#        <div class="row">#}
+{#            <div class="col-lg-10 col-lg-offset-1 col-xs-12">#}
+{#                <!--CTA Wrapper-->#}
+{#                <div class="co-cta-wrapper-1 fix">#}
+{#                    <h2 style="margin-bottom: 20px; text-align: center">Мы находимся: Красный проспект, 157</h2>#}
+{#                    <div id="map" style="width: 100%; height: 600px"></div>#}
+{#                </div>#}
+{#            </div>#}
+{#        </div>#}
+{#    </div>#}
+{#</div>#}
+
+<div class="co-mission-section-1 section pt-140 pb-140">
+    <img src="img/corporate/about/mission.png" alt="">
+    <div id="map" style="width: 100%; height: 600px"></div>
+</div>
+<!--Corporate Footer Section 1-->
+<div class="co-footer-section-1 section bg-dark-light pt-120 pb-80">
+    
+    <div class="container">
+        <a name="contact"></a>
+        <div class="row">
+
+            <div class="col-md-4 col-sm-6 col-xs-12 mb-40" style="width: 50%">
+                <div class="co-footer-widget-1">
+                    <img src="img/logo/footer-logo-light.png" alt="">
+                    <p>Наши cпециалисты найдут индивидуальный подход к каждому клиенту и помогут Вам совершить любые операции с драгметаллами, будь то покупка золота (платины) либо продажа серебряных украшений и мерных слитков.</p>
+                </div>
+            </div>
+
+            <div class="col-md-4 col-sm-6 col-xs-12 mb-40" style="width: 50%">
+                <div class="co-footer-widget-1 widget-contact">
+                    <h4 class="title">Наши контакты</h4>
+                    <ul>
+                        <li><span>Адрес :</span> г. Новосибирск. Красный проспект ,157</li>
+                        <li><span>Email :</span> <a href="#">ostrovsokrov@bk.ru</a></li>
+                        <li><span>Телефон :</span> <a href="#">+7(923)154-05-00</a></li>
+                    </ul>
+                </div>
+            </div>
+
+{#            <div class="col-md-4 col-sm-6 col-xs-12 mb-40">#}
+{#                <div class="co-footer-widget-1">#}
+{#                    <h4 class="title">Follow Us</h4>#}
+{#                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. its is Nulla tempor, nisl sed bibendum pretium.</p>#}
+{#                    <div class="co-footer-social-1 fix">#}
+{#                        <a href="#"><i class="icon-facebook"></i></a>#}
+{#                        <a href="#"><i class="icon-twitter"></i></a>#}
+{#                        <a href="#"><i class="icon-googleplus"></i></a>#}
+{#                        <a href="#"><i class="icon-dribbble"></i></a>#}
+{#                        <a href="#"><i class="icon-linkedin"></i></a>#}
+{#                    </div>#}
+{#                </div>#}
+{#            </div>#}
+
+        </div>
+    </div>
+    
+</div>
+    
+<div class="co-footer-bottom-1 section bg-dark">
+    <div class="container">
+        <div class="row">
+
+            <div class="col-xs-12">
+                <div class="co-copyright-1 text-center">
+                    <p>Copyright &copy; 2019 </a>. All Rights Reserved.</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+
+
+<!-- Placed JS at the end of the document so the pages load faster -->
+
+<!-- jQuery latest version -->
+<script src="{{ asset('js/vendor/jquery-3.1.1.min.js') }}"></script>
+<!-- Bootstrap js -->
+<script src="{{ asset('js/bootstrap.min.js') }}"></script>
+<!-- Plugins js -->
+<script src="{{ asset('js/plugins.js') }}"></script>
+<!-- Ajax Mail js -->
+<script src="{{ asset('js/ajax-mail.js') }}"></script>
+<!-- Main js -->
+<script src="{{ asset('js/main.js') }}"></script>
+<script src="{{ asset('https://maps.api.2gis.ru/2.0/loader.js?pkg=full') }}"></script>
+
+<script type="text/javascript">
+    var map;
+
+    DG.then(function () {
+        map = DG.map('map', {
+            center: [55.058088, 82.912456],
+            zoom: 18,
+            scrollWheelZoom: false
+        });
+        DG.marker([55.058088, 82.912456]).addTo(map).bindPopup('Остров сокровищ');
+    });
+</script>
+
+
+</body>
+
+</html>
