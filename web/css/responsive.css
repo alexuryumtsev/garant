@@ -39,6 +39,9 @@
 .table, .table-cell {
   /*display: block;*/
   height: auto;
+  font-size: 10px;
+  float: right;
+  margin-right: -10%;
 }
 #scrollUp {
   display: none !important;
