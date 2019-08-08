@@ -843,3 +843,102 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
   background-color: #3f3f3f;
   color: #fff;
 }
+
+@media only screen and (max-width: 767px) {
+    .container {
+        width: 450px;
+    }
+    .table, .table-cell {
+        /*display: block;*/
+        height: auto;
+        font-size: 10px;
+        float: right;
+        margin-right: -10%;
+    }
+    #scrollUp {
+        display: none !important;
+    }
+    /*Buttons*/
+    .btn, .btn-sm, .btn-lg {
+        font-size: 12px;
+        height: 33px;
+        padding: 4px 20px;
+    }
+    .btn-icon-right {
+        padding-right: 53px;
+    }
+    .btn-icon-right i {
+        right: 20px;
+    }
+    .btn-icon-left {
+        padding-left: 53px;
+    }
+    .btn-icon-left i {
+        left: 20px;
+    }
+    /*Header*/
+    .header-logo {
+        margin: 19px 0;
+        width: 65px;
+    }
+    .menu-toggle {
+        margin: 25px 0;
+    }
+    /*Header Buttons*/
+    .header-section .btn, .header-social {
+        margin: 18px 50px 18px 0;
+    }
+    .header-search {
+        padding: 18px 50px 18px 0;
+    }
+    /*Mobile Menu Toggle*/
+    a.meanmenu-reveal {
+        top: -55px;
+    }
+    .col-md-8{
+        /*width:66.66666667%;*/
+        margin-left: 0%;
+    }
+}
+
+@media (min-width: 992px) {
+    .col-md-8 {
+        margin-left: 20%;
+    }
+
+}
+.co-service-wrapper-1 {
+    background-color: #fff;
+    border-radius: 5px;
+    -webkit-box-shadow: 0 0 100px rgba(66, 66, 66, 0.15);
+    box-shadow: 0 0 100px rgba(66, 66, 66, 0.15);
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: -5%;
+    max-width: 1474px;
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    z-index: 1;
+}
+.co-about-image-1 img {
+    max-width: 85%;
+}
+.co-service-wrapper-1 {
+    margin-top: 190px;
+}
+.co-service-wrapper-1 {
+    margin-top: 170px;
+}
+.co-service-wrapper-1 {
+    margin-top: 180px;
+}
+.co-about-image-1 img {
+    width: 100%;
+    margin-left: -5%;
+}
+.co-mission-section-1 > img {
+    padding: 0 10px;
+    margin-left: 20%;
+}
